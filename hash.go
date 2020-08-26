@@ -45,3 +45,22 @@ func traverseHash(hash *HashTable) {
 		}
 	}
 }
+
+// Check if element exists in hash table
+func lookupHash(hash *HashTable, value int) bool {
+	index := hashFunction(value, hash.Size)
+
+	if hash.Table[index] != nil {
+		node := hash.Table[index]
+
+		for node != nil {
+			if node.Value == value {
+				return true
+			}
+
+			node = node.Next
+		}
+	}
+
+	return false
+}

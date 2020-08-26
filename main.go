@@ -24,4 +24,12 @@ func main() {
 	}
 
 	traverseHash(hash)
+
+	if lookupHash(hash, 120) {
+		fmt.Println("120 was found in hash")
+	}
+
+	if lookupHash(hash, 100) {
+		fmt.Println("100 was found in hash")
+	}
 }
